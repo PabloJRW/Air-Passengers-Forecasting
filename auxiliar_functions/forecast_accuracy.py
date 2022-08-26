@@ -1,10 +1,13 @@
 import numpy as np
+import pandas as pd
 
 # Accuracy metrics
 def forecast_accuracy(forecast, actual):
-    mae = np.mean(np.abs(forecast - actual))  # MAE
-    mse = np.mean(np.square(forecast - actual))  # MSE
-    mape = np.mean(np.abs(forecast - actual)/np.abs(actual))  # MAPE
-    rmse = np.sqrt(np.mean(np.square(forecast - actual)))  # RMSE
+    mae = round(np.mean(np.abs(forecast - actual)), 2)  # MAE
+    mse = round(np.mean(np.square(forecast - actual)), 2)  # MSE
+    mape = round(np.mean(np.abs(forecast - actual)/np.abs(actual)), 2)  # MAPE
+    rmse = round(np.sqrt(np.mean(np.square(forecast - actual))), 2)  # RMSE
     
-    return({'mae':mae, 'mse':mse, 'mape':mape, 'rmse':rmse})
+    scores = pd.DataFrame([mae,mse,mape,rmse], index=['MAE','MSE','MAPE','RMSE'], columns=['Scores'])
+    
+    return scores

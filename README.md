@@ -1,4 +1,4 @@
-# Pronóstico de Serie de Tiempo
+# Análisis Predictivo
 Pronóstico de la demanda de pasajeros de una aerolínea con datos de una serie de tiempo.
 
 Modelos probados:
